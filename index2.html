@@ -112,13 +112,13 @@ X-Axis    </div>
     <tr class="text-center">
       
       <td>Maximum(Absolute)</td>
-      <td>12.3</td>
+      <td id="x_max_i"></td>
  
     </tr>
     <tr class="text-center">
       
       <td>RMS</td>
-      <td>9.4</td>
+      <td id="x_rms_i"></td>
     
     </tr>
     <tr class="text-center">
@@ -193,13 +193,13 @@ Y-Axis
     <tr class="text-center">
       
       <td>Maximum(Absolute)</td>
-      <td>12.3</td>
+      <td id="y_max_i"></td>
  
     </tr>
     <tr class="text-center">
       
       <td>RMS</td>
-      <td>9.4</td>
+      <td id = "y_rms_i"></td>
     
     </tr>
     <tr class="text-center">
@@ -273,19 +273,19 @@ Y-Axis
     <tr class="text-center">
       
       <td>Maximum(Absolute)</td>
-      <td>12.3</td>
+      <td id="z_max_i"></td>
  
     </tr>
     <tr class="text-center">
       
       <td>RMS</td>
-      <td>9.4</td>
+      <td id="z_rms_i"></td>
     
     </tr>
     <tr class="text-center">
       
       <td>Cross-Correlation</td>
-      <td>3.2</td>
+      <td >3.2</td>
   
     </tr>
   </tbody>
@@ -399,9 +399,9 @@ var chartXC= new Chart(document.getElementById("line-chart-XC"), {
 var chartXI=new Chart(document.getElementById("line-chart-XI"), {
   type: 'line',
   data: {
-    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    labels: [],
     datasets: [{ 
-        data: [86,114,106,106,107,111,133,221,783,2478],
+        data: [],
         borderColor: "#3e95cd",
         lineTension: 0,
         fill: false
@@ -451,9 +451,9 @@ var chartYC= new Chart(document.getElementById("line-chart-YC"), {
 var chartYI=new Chart(document.getElementById("line-chart-YI"), {
   type: 'line',
   data: {
-    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    labels: [],
     datasets: [{ 
-        data: [86,114,106,106,107,111,133,221,783,2478],
+        data: [],
         borderColor: "#3e95cd",
         lineTension: 0,
         fill: false
@@ -505,9 +505,9 @@ var chartZC= new Chart(document.getElementById("line-chart-ZC"), {
 var chartZI=new Chart(document.getElementById("line-chart-ZI"), {
   type: 'line',
   data: {
-    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    labels: [],
     datasets: [{ 
-        data: [86,114,106,106,107,111,133,221,783,2478],
+        data: [],
         borderColor: "#3e95cd",
         lineTension: 0,
         fill: false
@@ -563,6 +563,63 @@ function myFunction2() {
 
  
   }
+
+
+
+ jQuery(document).ready(function () {
+
+  $.getJSON("ideal_data.json", function(json_ideal) {
+    console.log(json_ideal.x_max); // this will show the info it in firebug console
+
+
+
+                xmax=json_ideal.x_max;
+                xrms=json_ideal.x_rms
+                $('#x_max_i').html(xmax);
+                $('#x_rms_i').html(xrms);
+
+                ymax=json_ideal.y_max;
+                yrms=json_ideal.y_rms;
+                $('#y_max_i').html(ymax);
+                $('#y_rms_i').html(yrms);
+
+                zmax=json_ideal.z_max;
+                zrms=json_ideal.z_rms;
+                $('#z_max_i').html(zmax);
+                $('#z_rms_i').html(zrms);
+
+                chartXI.data.labels=[];
+                chartXI.data.labels=json_ideal.y_axis;
+                chartXI.data.datasets[0].data=[];
+                chartXI.data.datasets[0].data=json_ideal.x_read;
+
+                chartYI.data.labels=[];
+                chartYI.data.labels=json_ideal.y_axis;
+                chartYI.data.datasets[0].data=[];
+                chartYI.data.datasets[0].data=json_ideal.y_read;
+
+
+                chartZI.data.labels=[];
+                chartZI.data.labels=json_ideal.y_axis;
+                chartZI.data.datasets[0].data=[];
+                chartZI.data.datasets[0].data=json_ideal.z_read;
+
+                chartXI.options.scales.xAxes[0].ticks.fontSize = 10;
+                chartXI.options.scales.xAxes[0].ticks.maxTicksLimit=30;
+
+                chartYI.options.scales.xAxes[0].ticks.fontSize = 10;
+                chartYI.options.scales.xAxes[0].ticks.maxTicksLimit=30;
+
+                chartZI.options.scales.xAxes[0].ticks.fontSize = 10;
+                chartZI.options.scales.xAxes[0].ticks.maxTicksLimit=30;
+      
+      // re-render the chart
+                chartXI.update();
+                chartYI.update();
+                chartZI.update();
+});
+
+    });
 
 
 </script>
