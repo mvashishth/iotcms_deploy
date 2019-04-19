@@ -348,6 +348,15 @@ function ()
                 chartZC.data.labels=JSONObject1.y_axis;
                 chartZC.data.datasets[0].data=[];
                 chartZC.data.datasets[0].data=JSONObject1.z_read;
+
+                chartXC.options.scales.xAxes[0].ticks.fontSize = 10;
+                chartXC.options.scales.xAxes[0].ticks.maxTicksLimit=30;
+
+                chartYC.options.scales.xAxes[0].ticks.fontSize = 10;
+                chartYC.options.scales.xAxes[0].ticks.maxTicksLimit=30;
+
+                chartZC.options.scales.xAxes[0].ticks.fontSize = 10;
+                chartZC.options.scales.xAxes[0].ticks.maxTicksLimit=30;
       
       // re-render the chart
                 chartXC.update();
