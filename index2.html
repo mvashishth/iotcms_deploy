@@ -61,7 +61,7 @@ overflow: hidden;
 
 
 
-<div class="whole z1">
+<div id="X-encapse" class="whole z1" style="display:block">
 <div id='X-Axis' style="opacity:1">
 <div class="pad"> 
 <div class="container">
@@ -142,7 +142,7 @@ X-Axis    </div>
  <!-- Y-Axis -->
 
 
-<div class="whole z1">
+<div id="Y-encapse" class="whole z1" style="display:none">
 <div id="Y-Axis" style="opacity:0">
 <div class="pad"> 
 <div class="container">
@@ -221,7 +221,7 @@ Y-Axis
 
 
 <!-- Z-Axis -->
-<div class="whole z1">
+<div id="Z-encapse" class="whole z1" style="display:none">
 
  <div id="Z-Axis" style="opacity:0">
 <div class="pad"> 
@@ -537,6 +537,10 @@ function myFunction() {
   document.getElementById("X-Axis").style.opacity = "1"; 
   document.getElementById("Y-Axis").style.opacity = "0"; 
   document.getElementById("Z-Axis").style.opacity = "0"; 
+
+     document.getElementById("X-encapse").style.display = "block";
+   document.getElementById("Y-encapse").style.display = "none";  
+  document.getElementById("Z-encapse").style.display = "none";  
 }
   
 function myFunction1() {
@@ -544,11 +548,18 @@ document.getElementById("X-Axis").style.opacity = "0";
 document.getElementById("Y-Axis").style.opacity = "1"; 
 document.getElementById("Z-Axis").style.opacity = "0"; 
 
+   document.getElementById("X-encapse").style.display = "none";
+   document.getElementById("Y-encapse").style.display = "block";  
+  document.getElementById("Z-encapse").style.display = "none"; 
    }
 function myFunction2() {
   document.getElementById("X-Axis").style.opacity = "0"; 
   document.getElementById("Y-Axis").style.opacity = "0"; 
   document.getElementById("Z-Axis").style.opacity = "1"; 
+
+       document.getElementById("X-encapse").style.display = "none";
+   document.getElementById("Y-encapse").style.display = "none";  
+  document.getElementById("Z-encapse").style.display = "block";  
 
  
   }
