@@ -343,14 +343,17 @@ function ()
                 $('#z_max').html(zmax);
                 $('#z_rms').html(zrms);
                 $('#std_z').html(std_z);
-                
+
 
 
                 if (xmax > 3.5) {
-                	    //document.getElementById("x_max").style.background-color = "#FF6347";
    						document.getElementById("x_max").style.color= "#FF6347";  
 
 	} 
+	else{
+		document.getElementById("x_max").style.color= "#FFFFFF";
+
+	}
 
 
                 chartXC.data.labels=[];
