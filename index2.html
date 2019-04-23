@@ -355,6 +355,87 @@ function ()
 
 	}
 
+	                if (xrms > 1.5) {
+   						document.getElementById("x_rms").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("x_rms").style.color= "#FFFFFF";
+
+	}
+
+
+                if (xmax > 1.5) {
+   						document.getElementById("std_x").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("std_x").style.color= "#FFFFFF";
+
+	}
+
+
+
+
+                if (ymax > 1.5) {
+   						document.getElementById("y_max").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("y_max").style.color= "#FFFFFF";
+
+	}
+
+	                if (xrms > 0.8) {
+   						document.getElementById("y_rms").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("y_rms").style.color= "#FFFFFF";
+
+	}
+
+
+                if (std_y > 0.8) {
+   						document.getElementById("std_z").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("std_z").style.color= "#FFFFFF";
+
+	}
+
+
+
+	                if (zmax > 13) {
+   						document.getElementById("z_max").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("z_max").style.color= "#FFFFFF";
+
+	}
+
+	                if (zrms > 10.5) {
+   						document.getElementById("z_rms").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("z_rms").style.color= "#FFFFFF";
+
+	}
+
+
+                if (std_z > 1.5) {
+   						document.getElementById("std_z").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("std_z").style.color= "#FFFFFF";
+
+	}
+
+
 
                 chartXC.data.labels=[];
                 chartXC.data.labels=JSONObject1.y_axis;
