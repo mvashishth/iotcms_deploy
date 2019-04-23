@@ -321,6 +321,7 @@ function ()
                
                 var JSONObject1 = JSON.parse(zeta);
 
+                
                 xmax=JSONObject1.x_max;
                 xrms=JSONObject1.x_rms;
                 std_x=JSONObject1.std_x;
@@ -342,6 +343,14 @@ function ()
                 $('#z_max').html(zmax);
                 $('#z_rms').html(zrms);
                 $('#std_z').html(std_z);
+                
+
+
+                if (xmax > 3.5) {
+                	    //document.getElementById("x_max").style.background-color = "#FF6347";
+   						document.getElementById("x_max").style.color= "#FF6347";  
+
+	} 
 
 
                 chartXC.data.labels=[];
