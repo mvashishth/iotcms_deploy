@@ -321,6 +321,7 @@ function ()
                
                 var JSONObject1 = JSON.parse(zeta);
 
+                
                 xmax=JSONObject1.x_max;
                 xrms=JSONObject1.x_rms;
                 std_x=JSONObject1.std_x;
@@ -342,6 +343,98 @@ function ()
                 $('#z_max').html(zmax);
                 $('#z_rms').html(zrms);
                 $('#std_z').html(std_z);
+
+
+
+                if (xmax > 3.5) {
+   						document.getElementById("x_max").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("x_max").style.color= "#FFFFFF";
+
+	}
+
+	                if (xrms > 1.5) {
+   						document.getElementById("x_rms").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("x_rms").style.color= "#FFFFFF";
+
+	}
+
+
+                if (std_x > 1.5) {
+   						document.getElementById("std_x").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("std_x").style.color= "#FFFFFF";
+
+	}
+
+
+
+
+                if (ymax > 1.5) {
+   						document.getElementById("y_max").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("y_max").style.color= "#FFFFFF";
+
+	}
+
+	                if (yrms > 0.8) {
+   						document.getElementById("y_rms").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("y_rms").style.color= "#FFFFFF";
+
+	}
+
+
+                if (std_y > 0.8) {
+   						document.getElementById("std_y").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("std_y").style.color= "#FFFFFF";
+
+	}
+
+
+
+	                if (zmax > 13) {
+   						document.getElementById("z_max").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("z_max").style.color= "#FFFFFF";
+
+	}
+
+	                if (zrms > 10.5) {
+   						document.getElementById("z_rms").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("z_rms").style.color= "#FFFFFF";
+
+	}
+
+
+                if (std_z > 1.5) {
+   						document.getElementById("std_z").style.color= "#FF6347";  
+
+	} 
+	else{
+		document.getElementById("std_z").style.color= "#FFFFFF";
+
+	}
+
 
 
                 chartXC.data.labels=[];
